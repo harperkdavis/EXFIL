@@ -1,0 +1,29 @@
+{
+  "name": "exfil",
+  "version": "1.0.0",
+  "scripts": {
+    "serve:client": "webpack serve --content-base client/public",
+    "serve:server": "nodemon server/index.js",
+    "build": "cross-env NODE_ENV=production webpack",
+    "dev": "concurrently \"npm run serve:server\" \"npm run serve:client\"",
+    "start": "node server/index.js"
+  },
+  "devDependencies": {
+    "@babylonjs/core": "^5.7.0",
+    "concurrently": "^7.2.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.0.1",
+    "mini-css-extract-plugin": "^1.3.4",
+    "nodemon": "^2.0.16",
+    "svelte": "^3.31.2",
+    "svelte-loader": "^3.0.0",
+    "webpack": "^5.16.0",
+    "webpack-cli": "^4.4.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1"
+  }
+}
