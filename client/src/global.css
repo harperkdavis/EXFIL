@@ -5,7 +5,8 @@ html, body {
 }
 
 body {
-	color: #333;
+	background-color: #333;
+	color: #eee;
 	margin: 0;
 	padding: 8px;
 	box-sizing: border-box;
@@ -36,8 +37,10 @@ input, button, select, textarea {
 	padding: 0.4em;
 	margin: 0 0 0.5em 0;
 	box-sizing: border-box;
-	border: 1px solid #ccc;
-	border-radius: 2px;
+	border: 1px solid #555;
+	border-radius: 0;
+	background-color: #444;
+	color: #eee;
 }
 
 input:disabled {
@@ -45,19 +48,19 @@ input:disabled {
 }
 
 button {
-	color: #333;
-	background-color: #f4f4f4;
+	color: #eee;
+	background-color: #444;
 	outline: none;
 }
 
 button:disabled {
-	color: #999;
+	color: #666;
 }
 
 button:not(:disabled):active {
-	background-color: #ddd;
+	background-color: #555;
 }
 
 button:focus {
-	border-color: #666;
+	border-color: #777;
 }

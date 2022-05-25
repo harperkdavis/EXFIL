@@ -43,6 +43,22 @@ module.exports = {
 				]
 			},
 			{
+				test: /\.(ttf|eot|svg|png|jpg|gif|ico)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+				use: [
+					{
+						loader: 'file-loader'
+					}
+				]
+			},
+			{
+				test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+				use: [
+					{
+						loader: 'file-loader'
+					}
+				]
+			},
+			{
 				// required to prevent errors from Svelte on Webpack 5+
 				test: /node_modules\/svelte\/.*\.mjs$/,
 				resolve: {
@@ -60,5 +76,5 @@ module.exports = {
 	devtool: prod ? false : 'source-map',
 	devServer: {
 		hot: true
-	}
+	},
 };
