@@ -31,7 +31,8 @@
         await requestAndSetStatus('/user/login', {
             username: loginUsername.trim(),
             password: loginPassword.trim()
-        }).then(() => { checkUser() });
+        });
+        await checkUser();
     }
 
     async function createSubmit() {
@@ -43,11 +44,13 @@
             username: loginUsername.trim(),
             email: loginEmail.trim(),
             password: loginPassword.trim()
-        }).then(() => { checkUser() });
+        });
+        await checkUser();
     }
 
     async function playAsGuest() {
-        // TODO
+        await requestAndSetStatus('/user/guest', {});
+        await checkUser();
     }
 
     async function requestAndSetStatus(route, data) {
@@ -61,6 +64,7 @@
             }
         }).then((result) => {
             setStatus(result.data.status, result.data.message);
+            console.log(result.data);
         });
     }
 

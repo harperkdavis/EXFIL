@@ -10,6 +10,8 @@ const MongoStore = require('connect-mongo');
 
 const app = express();
 
+app.use(require('morgan')('tiny'));
+
 const api = require('./api');
 const { notFound, errorHandler } = require('./middleware/errors.middleware');
 
@@ -50,5 +52,9 @@ if (process.env.NODE_ENV === 'production') {
 app.use('/api/v1', api);
 app.use(notFound);
 app.use(errorHandler);
+
+const runInterval = require('./interval');
+runInterval();
+setInterval(runInterval, 60000);
 
 module.exports = app;

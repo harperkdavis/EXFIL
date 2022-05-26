@@ -62,7 +62,7 @@ router.post('/',
         return res.status(200).json({
             message: "Account created successfully!",
             status: 1,
-        })
+        });
 
     } catch (e) {
         console.error(e.message);

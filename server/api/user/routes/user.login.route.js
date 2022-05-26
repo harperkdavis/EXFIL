@@ -8,9 +8,9 @@ const {generateSession} = require("../../session");
 
 router.post('/',
     check('username', 'Invalid username.')
-        .isLength({min: 3, max: 32}),
+        .not().isEmpty().not().matches(/([^a-z0-9_.\-])/gi).isLength({min: 4, max: 24}),
     check('password', 'Invalid password.')
-        .isLength({min: 8, max: 64}),
+        .not().isEmpty().isLength({min: 8, max: 64}),
     async (req, res) => {
 
     const valErrors = validationResult(req);
@@ -60,6 +60,7 @@ router.post('/',
         return res.status(200).json({
             message: 'Successfully logged in!',
             status: 1,
+            session: req.session,
         })
 
     } catch (e) {

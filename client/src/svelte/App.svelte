@@ -32,9 +32,13 @@
 		}
 	}
 
+	async function setLoginData(loginData) {
+
+	}
+
 	async function logOut() {
-		(await axios.post('/user/logout'));
-		location.reload();
+		await axios.post('/user/logout');
+		gLoggedIn = false;
 	}
 
 </script>
