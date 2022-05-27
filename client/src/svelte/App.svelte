@@ -24,9 +24,6 @@
 		background-position: 0px -40px;
 		background-repeat: no-repeat;
 		background-size: cover;
-
-		overflow: hidden;
-		touch-action: none;
 	}
 
 	.blur {
