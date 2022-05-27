@@ -77,7 +77,7 @@
 
 <main>
     <div class="loginPanel">
-        <h1 class="gameTitle">EXFIL</h1>
+        <h1 class="gameTitle">LOGIN</h1>
         <StatusDisplay status={loginStatus} message={loginMessage}/>
         <form id="loginForm">
             <div class="loginForm">
@@ -135,7 +135,7 @@
 
     .loginPanel {
         background-color: #222;
-        margin: auto;
+        margin: 5em auto auto;
         width: 24em;
         padding: 1em;
     }
@@ -148,33 +148,5 @@
         vertical-align: middle;
         width: 100%;
     }
-
-    .blueSubmit {
-        background-color: #35b;
-        border-color: #24a;
-    }
-
-    .blueSubmit:not(:disabled):active {
-        background-color: #3050b0;
-    }
-
-    .greenSubmit {
-        background-color: #5a3;
-        border-color: #492;
-    }
-
-    .greenSubmit:not(:disabled):active {
-        background-color: #50a030;
-    }
-
-    .redSubmit {
-        background-color: #b34;
-        border-color: #a23;
-    }
-
-    .redSubmit:not(:disabled):active {
-        background-color: #b03040;
-    }
-
 
 </style>

@@ -1,57 +1,39 @@
 <script>
-	import { onMount } from 'svelte';
-
-	import LoginPage from './components/Login.svelte';
-	import axios from 'axios';
-
-	axios.defaults.baseURL = `http://localhost:7777/api/v1`;
-	axios.defaults.withCredentials = true;
-
-	let gLoggedIn = false;
-
-	let gUserId = undefined;
-	let gGuest = undefined;
-	let gUserData = undefined;
-
-	onMount(async () => {
-		gLoggedIn = false;
-
-		await checkUser();
-	});
-
-	async function checkUser() {
-		let loginData = (await axios.get('/user')).data;
-
-		if (loginData.active) {
-			gLoggedIn = true;
-			gUserId = loginData.user;
-			gGuest = loginData.guest;
-
-			gUserData = (await axios.get('/user/me')).data;
-			console.log(gUserData);
-		}
-	}
-
-	async function setLoginData(loginData) {
-
-	}
-
-	async function logOut() {
-		await axios.post('/user/logout');
-		gLoggedIn = false;
-	}
-
+	import Content from './components/Content.svelte';
 </script>
 
 <main>
-	{#if !gLoggedIn}
-		<LoginPage axios={axios} {checkUser}/>
-	{:else}
-		<h1>you are logged in son! id: {gUserId}, guest: {gGuest}</h1>
-		<button on:click={logOut}>Log me out!</button>
-	{/if}
+	<div class="container">
+		<div class="blur">
+			<Content />
+		</div>
+	</div>
+
 </main>
 
 <style>
+	.container {
 
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+
+		background-image: url('./assets/background.jpg');
+		background-position: 0px -40px;
+		background-repeat: no-repeat;
+		background-size: cover;
+
+		overflow: hidden;
+		touch-action: none;
+	}
+
+	.blur {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+	}
 </style>

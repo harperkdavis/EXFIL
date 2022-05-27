@@ -10,7 +10,7 @@ const MongoStore = require('connect-mongo');
 
 const app = express();
 
-app.use(require('morgan')('tiny'));
+// app.use(require('morgan')('tiny'));
 
 const api = require('./api');
 const { notFound, errorHandler } = require('./middleware/errors.middleware');

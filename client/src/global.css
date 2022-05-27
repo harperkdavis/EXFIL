@@ -5,10 +5,9 @@ html, body {
 }
 
 body {
-	background-color: #333;
 	color: #eee;
 	margin: 0;
-	padding: 8px;
+	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Share Tech Mono', monospace;
 }
@@ -63,4 +62,31 @@ button:not(:disabled):active {
 
 button:focus {
 	border-color: #777;
+}
+
+.redSubmit {
+	background-color: #b34;
+	border-color: #a23;
+}
+
+.redSubmit:not(:disabled):active {
+	background-color: #b03040;
+}
+
+.blueSubmit {
+	background-color: #35b;
+	border-color: #24a;
+}
+
+.blueSubmit:not(:disabled):active {
+	background-color: #3050b0;
+}
+
+.greenSubmit {
+	background-color: #5a3;
+	border-color: #492;
+}
+
+.greenSubmit:not(:disabled):active {
+	background-color: #50a030;
 }
